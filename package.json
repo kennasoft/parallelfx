@@ -1,0 +1,28 @@
+{
+  "name": "african-fx",
+  "version": "1.0.0",
+  "keywords": [
+    "exchange rate",
+    "currency",
+    "naira",
+    "parallel market"
+  ],
+  "description": "nodejs library for getting parallel exchange rates plus standard rates",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "main": "src/african-fx.js",
+  "author": "Ikenna Okonkwo<ikenna.okonkwo@gmail.com>",
+  "contributors": [],
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.2.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
+  }
+}
