@@ -21,7 +21,7 @@ npm install parallelfx
 Simply import the module, and use the promise-based methods like this
 
 ```js
-var parallelfx = require('parllelfx');
+var parallelfx = require('parallelfx');
 ```
 
 ### parallelfx.getRate()
