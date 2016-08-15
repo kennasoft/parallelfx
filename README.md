@@ -14,10 +14,15 @@ Simply import the module, and use the promise-based methods like this
 
 ```js
 var parallelfx = require('parllel-fx');
+```
 
+### parallelfx.getRate()
+
+```js
 parallelfx.getRate({from: 'USD', to: 'CAD'}).then(
     function(resp){
         //use the response object
+        //{from: 'XXX', to: 'XXX', rate: [exchange_rate]}
     },
     function(err){
         //report error
@@ -25,3 +30,16 @@ parallelfx.getRate({from: 'USD', to: 'CAD'}).then(
 );
 ```
 
+### parallelfx.convert()
+
+```js
+parallelfx.convert({value: 1000, from: 'USD', to: 'CAD'}).then(
+    function(resp){
+        //use the response object 
+        //{from: 'XXX', to: 'XXX', value: [converted amount], rate: [exchange_rate]}
+    },
+    function(err){
+        //report error
+    }
+);
+```
