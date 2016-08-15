@@ -19,6 +19,7 @@
   "author": "Ikenna Okonkwo<ikenna.okonkwo@gmail.com>",
   "contributors": [],
   "dependencies": {
+    "bluebird": "^3.4.1",
     "cheerio": "^0.20.0",
     "request": "^2.74.0"
   },
