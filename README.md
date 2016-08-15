@@ -22,7 +22,7 @@ var parallelfx = require('parllel-fx');
 parallelfx.getRate({from: 'USD', to: 'CAD'}).then(
     function(resp){
         //use the response object
-        //{from: 'XXX', to: 'XXX', rate: [exchange_rate]}
+        //resp = {from: 'XXX', to: 'XXX', rate: [exchange_rate]}
     },
     function(err){
         //report error
@@ -36,7 +36,36 @@ parallelfx.getRate({from: 'USD', to: 'CAD'}).then(
 parallelfx.convert({value: 1000, from: 'USD', to: 'CAD'}).then(
     function(resp){
         //use the response object 
-        //{from: 'XXX', to: 'XXX', value: [converted amount], rate: [exchange_rate]}
+        //resp = {from: 'XXX', to: 'XXX', value: [converted amount], rate: [exchange_rate]}
+    },
+    function(err){
+        //report error
+    }
+);
+```
+
+### parallelfx.getParallelRate()
+Please note that the getParallelRate() method currently supports only conversion between NGN and USD,GBP, EUR
+
+```js
+parallelfx.getParallelRate({from: 'EUR', to: 'NGN'}).then(
+    function(resp){
+        //use the response object
+        //resp = {from: 'XXX', to: 'XXX', rate: [exchange_rate]}
+    },
+    function(err){
+        //report error
+    }
+);
+```
+
+### parallelfx.convertParallel()
+
+```js
+parallelfx.convertParallel({value: 1000, from: 'GBP', to: 'NGN'}).then(
+    function(resp){
+        //use the response object 
+        //resp = {from: 'XXX', to: 'XXX', value: [converted amount], rate: [exchange_rate]}
     },
     function(err){
         //report error
