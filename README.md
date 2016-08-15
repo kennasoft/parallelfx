@@ -14,7 +14,7 @@ Thanks!
 ## Installation
 To install just do 
 ```
-npm i git+https://github.com/kennasoft/parallelfx.git
+npm install parallelfx
 ```
 
 ## Usage
