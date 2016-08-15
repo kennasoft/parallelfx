@@ -45,7 +45,7 @@ parallelfx.convert({value: 1000, from: 'USD', to: 'CAD'}).then(
 ```
 
 ### parallelfx.getParallelRate()
-Please note that the getParallelRate() method currently supports only conversion between NGN and USD,GBP, EUR
+Please note that the **getParallelRate()** method currently supports only conversion between NGN and USD,GBP, EUR
 
 ```js
 parallelfx.getParallelRate({from: 'EUR', to: 'NGN'}).then(
@@ -60,6 +60,7 @@ parallelfx.getParallelRate({from: 'EUR', to: 'NGN'}).then(
 ```
 
 ### parallelfx.convertParallel()
+Please note that the **convertParallel()** method currently supports only conversion between NGN and USD,GBP, EUR
 
 ```js
 parallelfx.convertParallel({value: 1000, from: 'GBP', to: 'NGN'}).then(
