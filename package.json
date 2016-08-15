@@ -1,6 +1,6 @@
 {
   "name": "parallelfx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/kennasoft/parallelfx.git"
@@ -12,7 +12,7 @@
     "parallel market",
     "Nigeria"
   ],
-  "description": "nodejs module for getting parallel exchange rates plus standard rates",
+  "description": "nodejs module for getting parallel currency exchange rates plus standard rates",
   "scripts": {
     "test": "jasmine"
   },
