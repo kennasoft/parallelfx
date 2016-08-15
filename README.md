@@ -2,18 +2,23 @@
 Exchange rates and conversions API for parallel foreign exchange (FX) market (or black market)
 
 **Parallel FX** is a node.js module `parallel-fx` that provides a promise-based API for retrieving current parallel market exchange rate. It also offers standard currency exchange rates as provided by [appspot](http://rate-exchange-1.appspot.com/)
+I'm calling on anyone who knows other sources of parallel market currency info, to take a look at the codebase and see how they can contribute, and grow this into something that can be used bay anyone. For now, the parallel rates cater to only Nigeria, while the standard rates are global.
+If you can't code (don't know what you'd be doing on github though :) ), and still want to contribute, you can help by pointing me to websites where I can get parallel market information for other countries.
+
+Thanks!
+
 
 ## Installation
 To install just do 
 ```
-npm i git+https://github.com/kennasoft/africanfx.git
+npm i git+https://github.com/kennasoft/parallelfx.git
 ```
 
 ## Usage
 Simply import the module, and use the promise-based methods like this
 
 ```js
-var parallelfx = require('parllel-fx');
+var parallelfx = require('parllelfx');
 ```
 
 ### parallelfx.getRate()
