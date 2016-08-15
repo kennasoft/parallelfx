@@ -1,4 +1,4 @@
-var africanfx = require("../src/african-fx");
+var africanfx = require("../src/parallel-fx");
 
 describe("African FX Module ", function(){
     describe("Get global exchange rates", function(){

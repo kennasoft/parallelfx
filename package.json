@@ -1,21 +1,22 @@
 {
-  "name": "african-fx",
+  "name": "parallelfx",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kennasoft/africanfx.git"
+    "url": "https://github.com/kennasoft/parallelfx.git"
   },
   "keywords": [
     "exchange rate",
     "currency",
     "naira",
-    "parallel market"
+    "parallel market",
+    "Nigeria"
   ],
   "description": "nodejs module for getting parallel exchange rates plus standard rates",
   "scripts": {
     "test": "jasmine"
   },
-  "main": "src/african-fx.js",
+  "main": "src/parallel-fx.js",
   "author": "Ikenna Okonkwo<ikenna.okonkwo@gmail.com>",
   "contributors": [],
   "dependencies": {
