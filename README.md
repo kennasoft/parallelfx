@@ -3,7 +3,7 @@ Exchange rates and conversions API for parallel foreign exchange (FX) market (or
 
 **Parallel FX** is a node.js module `parallel-fx` that provides a promise-based API for retrieving current parallel market exchange rate. It also offers standard currency exchange rates as provided by [appspot](http://rate-exchange-1.appspot.com/).
 
-I'm calling on anyone who knows other sources of parallel market currency info, to take a look at the codebase and see how they can contribute, and grow this into something that can be used by anyone. For now, the parallel rates cater to only Nigeria, while the standard rates are global.
+I'm calling on anyone who knows other sources of parallel market currency info, to take a look at the codebase and see how they can contribute, and grow this into something that can be used by anyone. For now, the parallel rates cater to only Nigeria & Ghana, while the standard rates are global.
 If you can't code, and still want to contribute, you can help by pointing me to websites where I can get parallel market information for other countries.
 
 Thanks!
@@ -53,10 +53,10 @@ parallelfx.convert({value: 1000, from: 'USD', to: 'CAD'}).then(
 ```
 
 ### parallelfx.getParallelRate()
-Please note that the **getParallelRate()** method currently supports only conversion between NGN and USD,GBP, EUR
+Please note that the **getParallelRate()** method currently supports only conversion between major currencies and NGN/GHS
 
 ```js
-parallelfx.getParallelRate({from: 'EUR', to: 'NGN'}).then(
+parallelfx.getParallelRate({from: 'EUR', to: 'GHS'}).then(
     function(resp){
         //use the response object
         //resp = {from: 'XXX', to: 'XXX', rate: [exchange_rate]}
@@ -68,7 +68,7 @@ parallelfx.getParallelRate({from: 'EUR', to: 'NGN'}).then(
 ```
 
 ### parallelfx.convertParallel()
-Please note that the **convertParallel()** method currently supports only conversion between NGN and USD,GBP, EUR
+Please note that the **convertParallel()** method currently supports only conversion between major currencies and NGN/GHS
 
 ```js
 parallelfx.convertParallel({value: 1000, from: 'GBP', to: 'NGN'}).then(
