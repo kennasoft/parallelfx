@@ -58,7 +58,7 @@ function getAbokiFxData( options, convert ){
                     case 'GBP':
                         buySellRate = fxRow.find('td:nth-child(3)').text(); break;
                     case 'EUR':
-                        buySellRate = fxRow.find('td:nth-child(2)').text(); break;
+                        buySellRate = fxRow.find('td:nth-child(4)').text(); break;
                 }
                 buySellRate = buySellRate.split('/').map( function( item ){
                     return parseFloat( item );

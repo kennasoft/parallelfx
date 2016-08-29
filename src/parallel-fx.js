@@ -1,5 +1,6 @@
 var request = require('request');
 var naija = require('./parallel-rates/nigeria');
+var ghana = require('./parallel-rates/ghana');
 var utils = require('./utils');
    
 
@@ -42,7 +43,7 @@ function getAppspotFx( options, convert ){
 }
 
         
-var africanfx = {
+var parallelfx = {
     
     getRate: function( options ){
         return getAppspotFx( options );
@@ -59,6 +60,13 @@ var africanfx = {
             || options.from.toUpperCase()==='NGN')){
                 return naija.getParallelRate( options );
         }
+        if((options.to && options.from) 
+            && 
+            (options.to.toUpperCase()==='GHS' 
+            || options.from.toUpperCase()==='GHS')){
+                return ghana.getParallelRate( options );
+        }
+        
     },
     
     convertParallel: function( options ){
@@ -68,11 +76,29 @@ var africanfx = {
             || options.from.toUpperCase()==='NGN')){
                 return naija.convertParallel( options );
         }
+        if((options.to && options.from) 
+            && 
+            (options.to.toUpperCase()==='GHS' 
+            || options.from.toUpperCase()==='GHS')){
+                return ghana.convertParallel( options );
+        }
     }
     
 };
 
-africanfx.getParallelRate({from:"NGN", to: "USD"});
-africanfx.convertParallel({value:5000, from:"NGN", to: "USD"});
+//parallelfx.getParallelRate({from: "USD", to: "GHS"})
+//        .then(function(resp){
+//            console.log("USD->GHS: ", resp);
+//        },
+//        function(err){
+//            console.log(err);
+//        });
+//parallelfx.convertParallel({value:5000, from:"GHS", to: "USD"})
+//        .then(function(resp){
+//            console.log("5000GHS->USD", resp);            
+//        },
+//        function(err){
+//            console.log(err);
+//        });
 
-module.exports = africanfx;
+module.exports = parallelfx;

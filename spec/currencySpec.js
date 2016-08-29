@@ -11,7 +11,7 @@ describe("Parallel FX Module ", function(){
                     expect(resp.rate).toBeDefined();
                     expect(resp.from.toUpperCase()).toEqual("USD");
                     expect(resp.to.toUpperCase()).toEqual("NGN");
-                    expect(resp.rate).toEqual(jasmine.any(Number));
+                    expect(resp.rate).toBeGreaterThan(0);
                     done();
                 },
                 function(err){
@@ -30,8 +30,8 @@ describe("Parallel FX Module ", function(){
                     expect(resp.value).toBeDefined();
                     expect(resp.from.toUpperCase()).toEqual("USD");
                     expect(resp.to.toUpperCase()).toEqual("NGN");
-                    expect(resp.rate).toEqual(jasmine.any(Number));
-                    expect(resp.value).toEqual(jasmine.any(Number));
+                    expect(resp.rate).toBeGreaterThan(0);
+                    expect(resp.value).toBeGreaterThan(0);
                     done();
                 },
                 function(err){
@@ -42,7 +42,7 @@ describe("Parallel FX Module ", function(){
     });
     
     
-    describe("Get Parallel (Black market) exchange rates", function(){    
+    describe("Get Parallel (Black market) exchange rates for NGN", function(){    
         //this method gets parallel rates from http://abokifx.com
         it("returns a promise that resolves to {from:xxx, rate:xxx, to:xxx}", function( done ){
             parallelfx.getParallelRate( {from: "USD", to: "NGN"} ).then(
@@ -52,7 +52,7 @@ describe("Parallel FX Module ", function(){
                     expect(resp.rate).toBeDefined();
                     expect(resp.from.toUpperCase()).toEqual("USD");
                     expect(resp.to.toUpperCase()).toEqual("NGN");
-                    expect(resp.rate).toEqual(jasmine.any(Number));
+                    expect(resp.rate).toBeGreaterThan(0);
                     done();
                 },
                 function(err){
@@ -71,8 +71,49 @@ describe("Parallel FX Module ", function(){
                     expect(resp.value).toBeDefined();
                     expect(resp.from.toUpperCase()).toEqual("USD");
                     expect(resp.to.toUpperCase()).toEqual("NGN");
-                    expect(resp.rate).toEqual(jasmine.any(Number));
-                    expect(resp.value).toEqual(jasmine.any(Number));
+                    expect(resp.rate).toBeGreaterThan(0);
+                    expect(resp.value).toBeGreaterThan(0);
+                    done();
+                },
+                function(err){
+                    done();
+                }
+            );
+        });
+    });
+    
+    
+    describe("Get Parallel (Black market) exchange rates for GHS", function(){    
+        //this method gets parallel rates from https://www.bog.gov.gh/data/bankindrate.php
+        it("returns a promise that resolves to {from:xxx, rate:xxx, to:xxx}", function( done ){
+            parallelfx.getParallelRate( {from: "USD", to: "GHS"} ).then(
+                function(resp){
+                    expect(resp.from).toBeDefined();
+                    expect(resp.to).toBeDefined();
+                    expect(resp.rate).toBeDefined();
+                    expect(resp.from.toUpperCase()).toEqual("USD");
+                    expect(resp.to.toUpperCase()).toEqual("GHS");
+                    expect(resp.rate).toBeGreaterThan(0);
+                    done();
+                },
+                function(err){
+                    done();
+                }
+            );
+        });
+        
+        //this method converts an amount based on parallel rates from https://www.bog.gov.gh/data/bankindrate.php
+        it("returns a promise that resolves to {from:xxx, rate:xxx, to:xxx, value:xxx}", function(done){
+            parallelfx.convertParallel({from: "USD", to: "GHS", value: 1000}).then(
+                function(resp){
+                    expect(resp.from).toBeDefined();
+                    expect(resp.to).toBeDefined();
+                    expect(resp.rate).toBeDefined();
+                    expect(resp.value).toBeDefined();
+                    expect(resp.from.toUpperCase()).toEqual("USD");
+                    expect(resp.to.toUpperCase()).toEqual("GHS");
+                    expect(resp.rate).toBeGreaterThan(0);
+                    expect(resp.value).toBeGreaterThan(0);
                     done();
                 },
                 function(err){
