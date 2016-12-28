@@ -2,7 +2,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var Promise = require('bluebird');
 
-var fxUrl = 'http://abokifx.com/bdcs';
+var fxUrl = 'http://abokifx.com';
 var allowedCurrencies = [
     'USD', 'GBP', 'EUR'
 ];
@@ -67,7 +67,7 @@ function getAbokiFxData( options, convert ){
                 resp.rate = 0;
                 switch( options.from.toUpperCase() ){
                     case 'NGN': resp.rate = 1/buySellRate[1]; break;
-                    default: resp.rate = buySellRate[0];
+                    default: resp.rate = buySellRate[1];
                 }
                 if( convert ){
                     resp.value = parseFloat((options.value * resp.rate).toFixed(4));
