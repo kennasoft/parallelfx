@@ -51,7 +51,7 @@ function getAbokiFxData( options, convert ){
             try{
                 var $ = cheerio.load(body);
                 var buySellRate = '';
-                var fxRow = $('.entry-content').find('table:nth-of-type(1)').find('tr:nth-child(3)');
+                var fxRow = $('.lagos-market-rates .grid-table').find('tr:nth-of-type(1)');
                 switch(currency){
                     case 'USD': 
                         buySellRate = fxRow.find('td:nth-child(2)').text(); break;
@@ -61,7 +61,7 @@ function getAbokiFxData( options, convert ){
                         buySellRate = fxRow.find('td:nth-child(4)').text(); break;
                 }
                 buySellRate = buySellRate.split('/').map( function( item ){
-                    return parseFloat( item );
+                    return parseFloat( item.trim() );
                 } );
                 var resp = options;
                 resp.rate = 0;
